@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
-import { useAuth } from '../hooks';
-import { refreshUser } from '../redux/auth/operations';
+import { useAuth } from 'hooks';
+import { refreshUser } from 'redux/auth/operations';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const ContactsPage = lazy(() => import('../pages/ContactPage'));
@@ -29,8 +29,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        {/* <Route path='/contacts' element={
-          <PrivateRoute redirectTo='/login' component={<ContactsPage />} />} */}
         <Route
           path="/contacts"
           element={
