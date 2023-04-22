@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import CloseIcon from '@mui/icons-material/Close';
 import ContactForm from '../contactForm';
-import ContactList from '../contactList';
+import { ContactList } from '../contactList/ContactList';
 import Filter from '../filter';
 import Modal from '../modal/Modal';
 import {
@@ -13,8 +13,6 @@ import {
   CloseButton,
   ContactWrapper,
 } from './ContactsGroup.styled';
-// import { selectContacts } from '../redux/contacts/selectors';
-// import { getContacts } from '../redux/selectors';
 import {
   addContact,
   editContact,
@@ -25,9 +23,8 @@ import {
   selectLoading,
   selectContacts,
 } from '../../redux/contacts/selectors';
-// import { getError, getIsLoading } from '../redux/selectors';
 
-function ContactsGroup() {
+export const ContactsGroup = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
@@ -37,9 +34,9 @@ function ContactsGroup() {
   const [showModal, setShowModal] = useState(false);
   const contacts = useSelector(selectContacts);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -109,6 +106,7 @@ function ContactsGroup() {
     setName(currentContact.name);
     setNumber(currentContact.number);
   };
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
@@ -129,7 +127,7 @@ function ContactsGroup() {
           />
         </Modal>
       )}
-      <div>
+      <>
         {!showModal && (
           <>
             <WrapperTitle>
@@ -146,9 +144,9 @@ function ContactsGroup() {
         </WrapperTitle>
         <Filter />
         <ContactList onContactEdit={id => onContactEdit(id)} />
-      </div>
+      </>
     </ContactWrapper>
   );
-}
+};
 
 export default ContactsGroup;

@@ -58,10 +58,5 @@ const contactSlice = createSlice({
         state.items.splice(index, 1, action.payload);
       })
       .addCase(editContact.rejected, handleRejected),
-  // .addCase(logOut.fulfilled, state => {
-  //   state.items = [];
-  //   state.error = null;
-  //   state.isLoading = false;
-  // }),
 });
 export const contactsReducer = contactSlice.reducer;

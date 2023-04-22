@@ -13,9 +13,8 @@ import { selectContacts, selectFilter } from '../../redux/contacts/selectors';
 // import { getContacts, getFilter } from '../../redux/selectors';
 import { deleteContact } from '../../redux/contacts/operations';
 
-export const ContactList = props => {
+export const ContactList = ({ onContactEdit }) => {
   const dispatch = useDispatch();
-  const { onContactEdit } = props;
 
   const contacts = useSelector(selectContacts);
   const filterData = useSelector(selectFilter);

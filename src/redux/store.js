@@ -19,7 +19,7 @@ import { contactsReducer } from './contacts/contactSlice';
 // import { contactsReducer } from './contactSlice';
 import { filterReducer } from './contacts/filterSlice';
 // import { filterReducer } from './filterSlice';
-import { authReducer } from './auth/slise';
+import { authReducer } from './auth/slice';
 // import { authReducer } from './auth/slice';
 
 // export const store = configureStore({
