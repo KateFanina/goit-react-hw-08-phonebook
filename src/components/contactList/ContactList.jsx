@@ -10,7 +10,6 @@ import {
   EditButton,
 } from './ContactList.styled';
 import { selectContacts, selectFilter } from '../../redux/contacts/selectors';
-// import { getContacts, getFilter } from '../../redux/selectors';
 import { deleteContact } from '../../redux/contacts/operations';
 
 export const ContactList = ({ onContactEdit }) => {
@@ -55,5 +54,3 @@ export const ContactList = ({ onContactEdit }) => {
 ContactList.propTypes = {
   onContactEdit: PropTypes.func.isRequired,
 };
-
-// export default ContactList;

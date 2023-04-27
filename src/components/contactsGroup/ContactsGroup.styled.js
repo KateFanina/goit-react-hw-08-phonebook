@@ -36,12 +36,10 @@ const CloseButton = styled(CloseIcon)`
 `;
 
 const ContactWrapper = styled.div`
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   font-size: 40px;
   color: rgb(1, 1, 1);
-  background-color: aliceblue;
   width: 500px;
   border-radius: 10px;
   padding: 20px;

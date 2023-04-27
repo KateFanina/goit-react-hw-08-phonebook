@@ -34,10 +34,6 @@ export const ContactsGroup = () => {
   const [showModal, setShowModal] = useState(false);
   const contacts = useSelector(selectContacts);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
-
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -131,7 +127,7 @@ export const ContactsGroup = () => {
         {!showModal && (
           <>
             <WrapperTitle>
-              <TitleMain>Phonebook</TitleMain>
+              {/* <TitleMain>Phonebook</TitleMain> */}
             </WrapperTitle>
             <ContactForm
               handleSubmit={(values, actions) => handleSubmit(values, actions)}
@@ -139,9 +135,7 @@ export const ContactsGroup = () => {
           </>
         )}
         {isLoading && !error && <b>Request in progress...</b>}
-        <WrapperTitle>
-          <TitleList>Contacts</TitleList>
-        </WrapperTitle>
+        <WrapperTitle>{/* <TitleList>Contacts</TitleList> */}</WrapperTitle>
         <Filter />
         <ContactList onContactEdit={id => onContactEdit(id)} />
       </>

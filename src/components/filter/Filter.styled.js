@@ -3,11 +3,11 @@ import styled from 'styled-components';
 const Input = styled.input`
   color: #2a2a2a;
   font-size: 18px;
+  border-radius: 8px;
+  border-color: blue;
+  padding: 8px;
   margin-bottom: 20px;
-  margin-left: 60px;
-  border-radius: 4px;
-  border-image: linear-gradient(to right, grey, silver) 1;
-  padding: 5px;
+  width: 100%;
   &:focus {
     outline-color: #2196f3;
   }
@@ -15,6 +15,7 @@ const Input = styled.input`
 
 const FindName = styled.div`
   font-size: 22px;
+  color: blue;
 `;
 
 export { Input, FindName };

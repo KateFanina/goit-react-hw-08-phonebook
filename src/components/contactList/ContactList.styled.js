@@ -9,7 +9,6 @@ const Li = styled.li`
   align-items: center;
   border-radius: 5px;
   padding-left: 9px;
-  background-color: lavender;
 `;
 
 const Ul = styled.ul`
@@ -24,14 +23,16 @@ const Paragraph = styled.p`
 `;
 
 const DeleteButton = styled(DeleteIcon)`
+  fill: blue;
   &:hover {
-    scale: 1.2;
+    scale: 1.5;
   }
 `;
 
 const EditButton = styled(EditIcon)`
+  color: blue;
   &:hover {
-    scale: 1.2;
+    scale: 1.5;
   }
 `;
 

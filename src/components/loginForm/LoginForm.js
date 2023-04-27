@@ -1,6 +1,8 @@
 import { useDispatch } from 'react-redux';
+import { Formik } from 'formik';
+import * as yup from 'yup';
 import { logIn } from '../../redux/auth/operations';
-import { Form, Label } from './LoginForm.styled';
+import { Form, Label, LoginInput, LoginButton } from './LoginForm.styled';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -11,7 +13,6 @@ export const LoginForm = () => {
     dispatch(
       logIn({
         email: form.elements.email.value,
-        // email: form.elements.email.LoginForm.value,
         password: form.elements.password.value,
       })
     );
@@ -22,17 +23,13 @@ export const LoginForm = () => {
     <Form onSubmit={handleSubmit} autoComplete="off">
       <Label>
         Email
-        <input type="email" name="email" />
+        <LoginInput type="email" name="email" />
       </Label>
       <Label>
         Password
-        <input placeholder="Email" type="password" name="password" />
+        <LoginInput type="password" name="password" />
       </Label>
-      <button type="submit">Log in</button>
+      <LoginButton type="submit">Log in</LoginButton>
     </Form>
-    //  <Form onSubmit={handleSubmit} autoComplete="off">
-    //   <Label>Password</Label>
-    //   <button type="submit">Log in</button>
-    // </Form>
   );
 };

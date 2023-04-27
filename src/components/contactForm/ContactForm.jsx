@@ -1,11 +1,25 @@
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { CompleteForm, Label, Input, Button } from './ContactForm.styled';
+import {
+  CompleteForm,
+  Label,
+  Input,
+  WtapperForButton,
+  Button,
+} from './ContactForm.styled';
 
 const schema = yup.object().shape({
-  name: yup.string().required(),
-  number: yup.string().required(),
+  name: yup
+    .string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  number: yup
+    .string()
+    .min(13, 'Too Short!')
+    .max(14, 'Too Long!')
+    .required('Required'),
 });
 
 const ContactForm = props => {
@@ -40,9 +54,11 @@ const ContactForm = props => {
             required
           />
         </Label>
-        <Button type="submit">
-          {contact?.name ? 'Save contact' : 'Add contact'}
-        </Button>
+        <WtapperForButton>
+          <Button type="submit">
+            {contact?.name ? 'Save contact' : 'Add contact'}
+          </Button>
+        </WtapperForButton>
       </CompleteForm>
     </Formik>
   );

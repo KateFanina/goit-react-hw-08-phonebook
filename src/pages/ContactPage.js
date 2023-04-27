@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { fetchContacts } from '../redux/contacts/operations';
 import { ContactList } from '../components/contactList/ContactList';
 import { ContactsGroup } from '../components/contactsGroup/ContactsGroup';
@@ -20,11 +19,9 @@ export default function ContactPage() {
 
   return (
     <>
-      <Helmet>
-        <div>
-          <title>Your contacts</title>
-        </div>
-      </Helmet>
+      <div>
+        <title>Your contacts</title>
+      </div>
       <ContactsGroup />
       <div>{isLoading && 'Request in progress...'}</div>
     </>
